@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Agencia.Models.Ajuda>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+
+<h1>Ajuda</h1>
+<hr />
+
+<p>
+    <a asp-action="Create">Pedir Ajuda</a>
+</p>
+<div class="divtabela">
+    <div>
+      
+    <div>
+@foreach (var item in Model) {
+        <p>
+
+            <p class="fonte">
+                @Html.DisplayNameFor(model => model.Nome)
+            </p>
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Nome)
+            </p>
+
+            <p class="fonte">
+                @Html.DisplayNameFor(model => model.Email)
+            </p>
+
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Email)
+            </p>
+
+            <p class="fonte">
+                @Html.DisplayNameFor(model => model.Telefone)
+            </p>
+
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </p>
+
+
+            <p class="fonte">
+                @Html.DisplayNameFor(model => model.Dúvida)
+            </p>
+
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Dúvida)
+            </p>
+            <p>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </p>
+        </p>
+        <hr/>
+}
+    </div>
+</div>
+</div>

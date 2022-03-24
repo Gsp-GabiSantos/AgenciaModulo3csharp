@@ -1,0 +1,37 @@
+﻿@model Agencia.Models.CadastroDestino
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container">
+<h3>Detalhes</h3>
+
+<div>
+    <h4>Cadastro Destino</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           Nome Destino
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome_Destino)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Lugar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Lugar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdDestino">Editar</a> |
+    <a asp-action="Index">Voltar para Lista</a>
+</div>
+</div>

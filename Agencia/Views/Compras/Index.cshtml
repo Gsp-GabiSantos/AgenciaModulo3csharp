@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Agencia.Models.Comprar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+
+<h3>Boas Compras</h3>
+<hr />
+
+<p>
+    <a asp-action="Create">Nova Compra</a>
+</p>
+<div class="divtabela">
+<div>
+    
+    <div>
+@foreach (var item in Model) {
+        <p>   
+            
+            <p class="fonte">
+               Seu Nome
+
+            </p>
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Seu_Nome)
+            </p>
+
+            <p class="fonte">
+                @Html.DisplayNameFor(model => model.Telefone)
+            </p>
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Telefone)
+               
+           
+            </p>
+
+            <p class="fonte">
+                @Html.DisplayNameFor(model => model.Email)
+            </p>
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Email)
+                
+             
+            </p>
+                <p class="fonte">
+                @Html.DisplayNameFor(model => model.CPF)
+            </p>
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.CPF)
+                
+              
+            </p>
+
+            <p class="fonte">
+                Forma de Pagamento
+            </p>
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Pagamento)
+                
+              
+            </p>
+
+            <p class="fonte">
+               Destino Comprado
+            </p>
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.CadastroDestino.Lugar)
+                
+             
+            </p>
+            <p>
+                <a asp-action="Edit" asp-route-id="@item.IdCompra">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.IdCompra">Detalhes</a> 
+                <a asp-action="Delete" asp-route-id="@item.IdCompra">Deletar</a>
+            </p>
+        </p>
+        <hr/>
+        
+}
+    </div>
+</div>
+</div>
+</div>
+
+
+
+

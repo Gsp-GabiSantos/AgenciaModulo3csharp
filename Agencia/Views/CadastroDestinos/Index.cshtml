@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Agencia.Models.CadastroDestino>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+
+<h3>Novos Destinos</h3>
+<hr />
+
+<p>
+    <a asp-action="Create">Criar Destino</a>
+</p>
+<div class="divtabela">
+    <div>
+      
+    <div>
+@foreach (var item in Model) {
+        <p>
+            <p class="fonte">
+                Nome Destino
+            </p>
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Nome_Destino)
+            </p>
+
+            <p class="fonte">
+                @Html.DisplayNameFor(model => model.Lugar)
+            </p>
+
+            <p class="espacamento">
+                @Html.DisplayFor(modelItem => item.Lugar)
+            </p>
+
+            <p class="fonte">
+                @Html.DisplayNameFor(model => model.Valor)
+            </p>
+            <p class="espacamento">
+                R$ @Html.DisplayFor(modelItem => item.Valor)
+            </p>
+            <p>
+                <a asp-action="Edit" asp-route-id="@item.IdDestino">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.IdDestino">Detalhes</a> 
+                <a asp-action="Delete" asp-route-id="@item.IdDestino">Deletar</a>
+            </p>
+        </p>
+        <hr/>
+}
+    </div>
+
+</div>
+</div>
+</div>
